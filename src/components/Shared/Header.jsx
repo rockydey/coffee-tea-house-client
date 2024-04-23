@@ -7,8 +7,8 @@ const Header = () => {
       style={{ backgroundImage: `url(${logoBg})` }}
       className=' bg-center bg-no-repeat bg-cover'>
       <div className='flex items-center justify-center gap-4 py-4'>
-        <img className='w-[70px]' src={logo} alt='' />
-        <h2 className='font-rancho text-6xl text-color1'>Espresso Emporium</h2>
+        <img className='w-10 md:w-[70px]' src={logo} alt='' />
+        <h2 className='font-rancho text-4xl md:text-6xl text-color1'>Espresso Emporium</h2>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import notFoundImg from "../../assets/images/404/404.gif";
 import { IoMdArrowBack } from "react-icons/io";
 import Header from "../../components/Shared/Header";
+import Footer from "../../components/Shared/Footer";
 
 const NotFound = () => {
   return (
@@ -18,6 +19,7 @@ const NotFound = () => {
       <div className='my-20'>
         <img className='mx-auto' src={notFoundImg} alt='' />
       </div>
+      <Footer />
     </div>
   );
 };

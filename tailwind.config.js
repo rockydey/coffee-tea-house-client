@@ -8,7 +8,6 @@ export default {
       color3: "#E3B577",
       color4: "#331A15",
       color5: "#1B1A1A",
-      color6: "#1B1A1A",
     },
     extend: {
       fontFamily: {
