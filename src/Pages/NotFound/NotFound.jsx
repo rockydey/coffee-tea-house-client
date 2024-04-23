@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import notFoundImg from "../../assets/images/404/404.gif";
 import { IoMdArrowBack } from "react-icons/io";
+import Header from "../../components/Shared/Header";
 
 const NotFound = () => {
   return (
     <div className=''>
+      <Header />
       <Link
         to='/'
         className='font-rancho mt-16 flex items-center gap-4 text-3xl justify-center text-color4'>
