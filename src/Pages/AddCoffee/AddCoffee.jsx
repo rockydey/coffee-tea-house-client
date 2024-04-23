@@ -1,7 +1,45 @@
 import { Link } from "react-router-dom";
 import { IoMdArrowBack } from "react-icons/io";
+import Swal from "sweetalert2";
 
 const AddCoffee = () => {
+  const handleAddCoffee = (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+    const name = form.name.value;
+    const chef = form.chef.value;
+    const supplier = form.supplier.value;
+    const taste = form.taste.value;
+    const category = form.category.value;
+    const details = form.details.value;
+    const photo = form.photo.value;
+
+    const newCoffee = { name, chef, supplier, taste, category, details, photo };
+    console.log(newCoffee);
+
+    fetch("http://localhost:5000/coffees", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newCoffee),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            icon: "success",
+            title: "Success!",
+            text: "Coffee Added Successfully!",
+            confirmButtonText: "Cool",
+          });
+        }
+        form.reset();
+      });
+  };
+
   return (
     <div className='max-w-screen-xl mx-auto mb-20 mt-10'>
       <Link
@@ -22,7 +60,7 @@ const AddCoffee = () => {
           using Lorem Ipsum is that it has a more-or-less normal distribution of
           letters, as opposed to using Content here.
         </p>
-        <form className='space-y-6'>
+        <form onSubmit={handleAddCoffee} className='space-y-6'>
           <div className='grid grid-cols-2 gap-6'>
             <div>
               <label
