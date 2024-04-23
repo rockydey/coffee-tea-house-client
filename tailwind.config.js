@@ -12,10 +12,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        fontFamily: {
-          raleway: '"Raleway", sans-serif',
-          rancho: '"Rancho", cursive',
-        },
+        raleway: '"Raleway", sans-serif',
+        rancho: '"Rancho", cursive',
       },
     },
   },
