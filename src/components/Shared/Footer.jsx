@@ -13,7 +13,7 @@ const Footer = () => {
     <div>
       <div
         style={{ backgroundImage: `url(${footerBg1})` }}
-        className='bg-cover bg-center bg-no-repeat pt-24 pb-12'>
+        className='bg-cover bg-center bg-no-repeat pt-16 pb-12'>
         <div className='max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-24 px-5 md:px-16 lg:px-0'>
           <div className='space-y-7'>
             <img className='w-[75px]' src={logo} alt='' />
