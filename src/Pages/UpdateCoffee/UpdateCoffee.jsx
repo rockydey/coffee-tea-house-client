@@ -58,24 +58,24 @@ const UpdateCoffee = () => {
       </Helmet>
       <Link
         to='/'
-        className='font-rancho mt-16 flex items-center gap-4 text-3xl text-color4 mb-10'>
+        className='font-rancho px-5 md:px-10 lg:px-0 mt-16 flex items-center gap-4 text-3xl text-color4 mb-10'>
         <IoMdArrowBack />{" "}
         <span className='text-[#374151] drop-shadow-lg blur-[0.4px]'>
           Back to home
         </span>
       </Link>
-      <div className='bg-[#F4F3F0] py-16 px-20 space-y-8 rounded-md'>
+      <div className='bg-[#F4F3F0] py-8 md:py-16 px-5 md:px-20 space-y-8 rounded-md'>
         <h2 className='drop-shadow-lg blur-[0.4px] text-[#374151] font-rancho text-5xl text-center'>
           Update Existing Coffee Details
         </h2>
-        <p className='font-raleway text-lg font-normal text-[#1B1A1AB3] px-20 text-center'>
+        <p className='font-raleway text-lg font-normal text-[#1B1A1AB3] md:px-10 lg:px-20 text-center'>
           It is a long established fact that a reader will be distraceted by the
           readable content of a page when looking at its layout. The point of
           using Lorem Ipsum is that it has a more-or-less normal distribution of
           letters, as opposed to using Content here.
         </p>
         <form onSubmit={handleUpdateCoffee} className='space-y-6'>
-          <div className='grid grid-cols-2 gap-6'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
             <div>
               <label
                 htmlFor='name'
@@ -107,7 +107,7 @@ const UpdateCoffee = () => {
               />
             </div>
           </div>
-          <div className='grid grid-cols-2 gap-6'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
             <div>
               <label
                 htmlFor='supplier'
@@ -139,7 +139,7 @@ const UpdateCoffee = () => {
               />
             </div>
           </div>
-          <div className='grid grid-cols-2 gap-6'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
             <div>
               <label
                 htmlFor='category'
