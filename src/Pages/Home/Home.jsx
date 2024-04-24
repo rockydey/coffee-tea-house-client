@@ -31,7 +31,11 @@ const Home = () => {
           </Link>
           <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
             {coffees.map((coffee) => (
-              <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>
+              <CoffeeCard
+                key={coffee._id}
+                coffee={coffee}
+                coffees={coffees}
+                setCoffees={setCoffees}></CoffeeCard>
             ))}
           </div>
         </div>

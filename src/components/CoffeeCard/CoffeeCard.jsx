@@ -2,9 +2,40 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { FaEye } from "react-icons/fa";
 import { MdEdit, MdDelete } from "react-icons/md";
+import Swal from "sweetalert2";
 
-const CoffeeCard = ({ coffee }) => {
+const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
   const { _id, name, chef, photo } = coffee;
+  const handleDeleteCoffee = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/coffees/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              const remaining = coffees.filter((cof) => cof._id !== id);
+              setCoffees(remaining);
+
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your Coffee has been deleted!",
+                icon: "success",
+              });
+            }
+          });
+      }
+    });
+  };
   return (
     <div className=' bg-[#F5F4F1] p-7 flex justify-between gap-16 items-center rounded-xl'>
       <div>
@@ -33,7 +64,9 @@ const CoffeeCard = ({ coffee }) => {
             className='text-xl bg-[#3C393B] flex items-center p-3 text-color1 rounded-md'>
             <MdEdit />
           </Link>
-          <Link className='text-xl bg-[#EA4744] flex items-center p-3 text-color1 rounded-md'>
+          <Link
+            onClick={() => handleDeleteCoffee(_id)}
+            className='text-xl bg-[#EA4744] flex items-center p-3 text-color1 rounded-md'>
             <MdDelete />
           </Link>
         </div>
@@ -44,6 +77,8 @@ const CoffeeCard = ({ coffee }) => {
 
 CoffeeCard.propTypes = {
   coffee: PropTypes.object,
+  coffees: PropTypes.array,
+  setCoffees: PropTypes.func,
 };
 
 export default CoffeeCard;
