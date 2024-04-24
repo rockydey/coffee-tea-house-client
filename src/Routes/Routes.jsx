@@ -3,6 +3,7 @@ import Main from "../layouts/Main";
 import NotFound from "../Pages/NotFound/NotFound";
 import Home from "../Pages/Home/Home";
 import AddCoffee from "../Pages/AddCoffee/AddCoffee";
+import ViewCoffee from "../Pages/ViewCoffee/ViewCoffee";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,12 @@ const router = createBrowserRouter([
       {
         path: "/add-coffee",
         element: <AddCoffee />,
+      },
+      {
+        path: "/view-coffee/:id",
+        element: <ViewCoffee />,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/coffees/${params.id}`),
       },
     ],
   },

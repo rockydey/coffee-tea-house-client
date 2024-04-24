@@ -29,7 +29,7 @@ const Home = () => {
             className='text-color4 font-rancho text-2xl flex items-center gap-2 mx-auto px-5 py-2 w-40 bg-[#E3B577] mb-12 border-2 border-color4 rounded-md'>
             <span className='text-color1'>Add Coffee</span> <LuCoffee />
           </Link>
-          <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
+          <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 px-5 md:px-16 lg:px-0'>
             {coffees.map((coffee) => (
               <CoffeeCard
                 key={coffee._id}

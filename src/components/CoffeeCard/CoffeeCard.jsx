@@ -37,11 +37,11 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
     });
   };
   return (
-    <div className=' bg-[#F5F4F1] p-7 flex justify-between gap-16 items-center rounded-xl'>
+    <div className=' bg-[#F5F4F1] p-5 md:p-7 flex flex-col md:flex-row justify-between md:gap-16 items-center rounded-xl'>
       <div>
-        <img src={photo} alt='' />
+        <img className='md:w-40' src={photo} alt='' />
       </div>
-      <div className='flex items-center justify-between flex-1'>
+      <div className='flex items-center gap-5 md:gap-0 justify-between flex-1'>
         <div className='font-raleway text-xl text-[#1B1A1AB3] font-normal space-y-3'>
           <p>
             <span className='text-color5 font-semibold'>Name:</span> {name}
@@ -55,7 +55,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
         </div>
         <div className='space-y-4'>
           <Link
-            to='/view-coffee'
+            to={`/view-coffee/${_id}`}
             className='text-xl bg-[#D2B48C] flex items-center p-3 text-color1 rounded-md'>
             <FaEye />
           </Link>
