@@ -14,7 +14,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("https://coffee-tea-house-server-mzgtrf819-projects-rocky.vercel.app/coffees"),
+        loader: () => fetch("https://coffee-tea-house-server.vercel.app/coffees"),
       },
       {
         path: "/add-coffee",
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
         path: "/view-coffee/:id",
         element: <ViewCoffee />,
         loader: ({ params }) =>
-          fetch(`https://coffee-tea-house-server-mzgtrf819-projects-rocky.vercel.app/coffees/${params.id}`),
+          fetch(`https://coffee-tea-house-server.vercel.app/coffees/${params.id}`),
       },
     ],
   },
