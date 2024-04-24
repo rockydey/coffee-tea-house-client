@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "react-router-dom";
 import { IoMdArrowBack } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 
 const ViewCoffee = () => {
   const loadedCoffee = useLoaderData();
@@ -8,6 +9,9 @@ const ViewCoffee = () => {
 
   return (
     <div className='max-w-screen-xl mx-auto mb-20 mt-10'>
+      <Helmet>
+        <title>View Coffee - {name}</title>
+      </Helmet>
       <div className='w-full px-5 md:px-0 md:w-10/12 lg:w-3/5 mx-auto'>
         <Link
           to='/'

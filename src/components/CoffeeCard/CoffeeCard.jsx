@@ -60,7 +60,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
             <FaEye />
           </Link>
           <Link
-            to='/update-coffee'
+            to={`/update-coffee/${_id}`}
             className='text-xl bg-[#3C393B] flex items-center p-3 text-color1 rounded-md'>
             <MdEdit />
           </Link>

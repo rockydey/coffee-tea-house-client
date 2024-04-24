@@ -3,10 +3,14 @@ import notFoundImg from "../../assets/images/404/404.gif";
 import { IoMdArrowBack } from "react-icons/io";
 import Header from "../../components/Shared/Header";
 import Footer from "../../components/Shared/Footer";
+import { Helmet } from "react-helmet-async";
 
 const NotFound = () => {
   return (
     <div className=''>
+      <Helmet>
+        <title>Not Found</title>
+      </Helmet>
       <Header />
       <Link
         to='/'

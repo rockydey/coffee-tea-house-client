@@ -6,12 +6,16 @@ import { useState } from "react";
 import CoffeeCard from "../../components/CoffeeCard/CoffeeCard";
 import { LuCoffee } from "react-icons/lu";
 import productImg from "../../assets/images/more/1.png";
+import { Helmet } from "react-helmet-async";
 
 const Home = () => {
   const allLoadedCoffees = useLoaderData();
   const [coffees, setCoffees] = useState(allLoadedCoffees);
   return (
     <div>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <Banner />
       <ChooseUs />
       <div
